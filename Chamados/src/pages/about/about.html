@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Fechar Chamados
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+    selecione a fila para listar
+  </p>
+  <p>
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>Fila</ion-label>
+        <ion-select [(ngModel)]="fila">
+          <ion-option value="">Seleciona a fila</ion-option>
+          <ion-option value="ti">TI</ion-option>
+          <ion-option value="Financeiro">Financeiro</ion-option>
+          <ion-option value="Comercial">Comercial</ion-option>
+          <ion-option value="RH">RH</ion-option>
+          <ion-option value="Diretoria">Diretoria</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <p>
+        <button (click)="listar()" ion-button color="default">Listar</button>
+      </p>
+
+    </ion-list>
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+        #{{ item.id }} - {{ item.name }}
+      </button>
+    </ion-list>
+  </p>
+</ion-content>

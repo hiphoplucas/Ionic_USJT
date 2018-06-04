@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Novo Chamado</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+    preencha os dados solicitados
+  </p>
+  <p>
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>Título</ion-label>
+        <ion-input [(ngModel)]="titulo" type="text" value=""></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Fila</ion-label>
+        <ion-select [(ngModel)]="fila">
+          <ion-option value="">Seleciona a fila</ion-option>
+          <ion-option value="ti">TI</ion-option>
+          <ion-option value="Financeiro">Financeiro</ion-option>
+          <ion-option value="Comercial">Comercial</ion-option>
+          <ion-option value="RH">RH</ion-option>
+          <ion-option value="Diretoria">Diretoria</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Descrição</ion-label>
+        <ion-textarea [(ngModel)]="descricao" ></ion-textarea>
+      </ion-item>
+
+      <p>
+        <button (click)="hue()" ion-button color="default">Salvar</button>
+      </p>
+
+    </ion-list>
+  </p>
+</ion-content>
