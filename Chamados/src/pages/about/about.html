@@ -10,30 +10,28 @@
   <p>
     selecione a fila para listar
   </p>
-  <p>
-    <ion-list>
+  <ion-list>
 
-      <ion-item>
-        <ion-label fixed>Fila</ion-label>
-        <ion-select [(ngModel)]="fila">
-          <ion-option value="">Seleciona a fila</ion-option>
-          <ion-option value="ti">TI</ion-option>
-          <ion-option value="Financeiro">Financeiro</ion-option>
-          <ion-option value="Comercial">Comercial</ion-option>
-          <ion-option value="RH">RH</ion-option>
-          <ion-option value="Diretoria">Diretoria</ion-option>
-        </ion-select>
-      </ion-item>
+    <ion-item>
+      <ion-label fixed>Fila</ion-label>
+      <ion-select [(ngModel)]="fila">
+        <ion-option value="">Seleciona a fila</ion-option>
+        <ion-option *ngFor="let fila of filas" value="{{ fila.id }}">{{ fila.name }}</ion-option>
+      </ion-select>
+    </ion-item>
 
-      <p>
-        <button (click)="listar()" ion-button color="default">Listar</button>
-      </p>
+    <p>
+      <button (click)="listar()" ion-button color="default">Listar</button>
+    </p>
 
-    </ion-list>
-    <ion-list>
-      <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-        #{{ item.id }} - {{ item.name }}
-      </button>
-    </ion-list>
-  </p>
+  </ion-list>
+  <h3>
+    {{ tituloChamado }}
+  </h3>
+  <ion-list>
+    <button ion-item *ngFor="let chamado of items" (click)="itemSelected(item)">
+      #{{ chamado.id }} - {{ chamado.titulo }}
+    </button>
+  </ion-list>
+
 </ion-content>
