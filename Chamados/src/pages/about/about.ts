@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ChamadosProvider } from '../../providers/chamados/chamados';
+import { RestJsonProvider } from '../../providers/rest-json/rest-json';
 
 @Component({
   selector: 'page-about',
@@ -13,7 +14,8 @@ export class AboutPage {
  public fila;
  public tituloChamado;
 
-  constructor(public navCtrl: NavController, public chamados: ChamadosProvider) {
+  constructor(public navCtrl: NavController, public chamados: ChamadosProvider, public ws: RestJsonProvider) {
+    //this.items  = ws.getWS([{ 'fila':'TI' }]);
     this.filas = chamados.getFilas();
   }
 

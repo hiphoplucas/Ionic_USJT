@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ChamadosProvider } from '../providers/chamados/chamados';
 import { HttpClientModule, HttpClient } from '@angular/common/http'; 
 import { HttpModule } from '@angular/http';
+import { RestJsonProvider } from '../providers/rest-json/rest-json';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HttpModule } from '@angular/http';
     SplashScreen,
     HttpClient,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ChamadosProvider
+    ChamadosProvider,
+    RestJsonProvider
   ]
 })
 export class AppModule {}
